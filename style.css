@@ -1,0 +1,714 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: pink;
+    color: blue;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.header {
+    background: #0f172a;
+    color: white;
+
+    padding: 18px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.header nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.header nav a:hover {
+    color: #38bdf8;
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero {
+    min-height: 420px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1d4ed8
+    );
+
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #dbeafe;
+
+    margin-bottom: 30px;
+}
+
+.start-btn {
+    display: inline-block;
+
+    padding: 13px 28px;
+
+    background: #38bdf8;
+    color: #082f49;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+}
+
+.start-btn:hover {
+    background: #7dd3fc;
+}
+
+
+/* =====================================
+   BUILDER
+===================================== */
+
+.builder-section {
+    padding: 50px 4%;
+}
+
+.builder-container {
+    max-width: 1400px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 420px 1fr;
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+/* =====================================
+   FORM
+===================================== */
+
+.form-container {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+.form-container > h2 {
+    font-size: 28px;
+}
+
+.form-description {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+
+/* FORM SECTION */
+
+.form-section {
+    border-top: 1px solid #e2e8f0;
+
+    padding-top: 22px;
+
+    margin-top: 22px;
+}
+
+.form-section h3 {
+    color: #1e3a8a;
+
+    margin-bottom: 18px;
+
+    font-size: 18px;
+}
+
+.form-section label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.form-section input,
+.form-section textarea {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+.form-section input:focus,
+.form-section textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.1);
+}
+
+.form-section textarea {
+    resize: vertical;
+}
+
+
+/* =====================================
+   SECTION HEADING
+===================================== */
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.section-heading h3 {
+    margin-bottom: 0;
+}
+
+.add-btn {
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 7px 13px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* =====================================
+   EDUCATION / PROJECT FORM
+===================================== */
+
+.education-form,
+.project-form {
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 7px;
+}
+
+
+/* =====================================
+   REMOVE BUTTON
+===================================== */
+
+.remove-btn {
+    background: #ef4444;
+
+    color: white;
+
+    border: none;
+
+    padding: 7px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background: #dc2626;
+}
+
+
+/* =====================================
+   HINT
+===================================== */
+
+.hint {
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-top: -8px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =====================================
+   ACTION BUTTONS
+===================================== */
+
+.form-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+.form-actions button {
+    border: none;
+
+    padding: 13px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.generate-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.generate-btn:hover {
+    background: #1d4ed8;
+}
+
+.print-btn {
+    background: #16a34a;
+    color: white;
+}
+
+.print-btn:hover {
+    background: #15803d;
+}
+
+.reset-btn {
+    background: #64748b;
+    color: white;
+}
+
+.reset-btn:hover {
+    background: #475569;
+}
+
+
+/* =====================================
+   PREVIEW
+===================================== */
+
+.preview-container {
+    background: #cbd5e1;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+}
+
+.resume {
+    width: 794px;
+
+    min-height: 1123px;
+
+    margin: auto;
+
+    background: white;
+
+    display: grid;
+
+    grid-template-columns: 245px 1fr;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+
+/* =====================================
+   RESUME SIDEBAR
+===================================== */
+
+.resume-sidebar {
+    background: #172033;
+
+    color: white;
+
+    padding: 30px 22px;
+}
+
+.profile-area {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.profile-photo {
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    margin: auto;
+
+    margin-bottom: 15px;
+
+    border: 4px solid #38bdf8;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #334155;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: none;
+}
+
+.profile-photo span {
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+.profile-area h2 {
+    font-size: 21px;
+
+    margin-bottom: 5px;
+}
+
+.profile-area p {
+    color: #38bdf8;
+
+    font-size: 13px;
+}
+
+
+/* SIDEBAR SECTION */
+
+.sidebar-section {
+    margin-bottom: 28px;
+}
+
+.sidebar-section h3 {
+    color: #38bdf8;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid #475569;
+
+    padding-bottom: 7px;
+
+    margin-bottom: 12px;
+}
+
+.sidebar-section p {
+    font-size: 12px;
+
+    margin-bottom: 8px;
+
+    word-break: break-word;
+}
+
+.sidebar-section ul {
+    list-style: none;
+}
+
+.sidebar-section li {
+    font-size: 12px;
+
+    margin-bottom: 7px;
+}
+
+
+/* =====================================
+   MAIN RESUME
+===================================== */
+
+.resume-main {
+    padding: 38px 38px;
+
+    color: #334155;
+}
+
+.resume-main-header {
+    border-bottom: 3px solid #38bdf8;
+
+    padding-bottom: 18px;
+
+    margin-bottom: 25px;
+}
+
+.resume-main-header h1 {
+    color: #111827;
+
+    font-size: 32px;
+
+    margin-bottom: 4px;
+}
+
+.resume-main-header h2 {
+    color: #64748b;
+
+    font-size: 15px;
+
+    font-weight: normal;
+}
+
+
+/* =====================================
+   RESUME SECTIONS
+===================================== */
+
+.resume-section {
+    margin-bottom: 25px;
+}
+
+.resume-section h3 {
+    color: #1e3a8a;
+
+    font-size: 15px;
+
+    border-bottom: 1px solid #cbd5e1;
+
+    padding-bottom: 6px;
+
+    margin-bottom: 12px;
+}
+
+.resume-section p {
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   EDUCATION PREVIEW
+===================================== */
+
+.resume-education {
+    border-left: 3px solid #38bdf8;
+
+    padding-left: 12px;
+
+    margin-bottom: 16px;
+}
+
+.resume-education h4 {
+    font-size: 14px;
+
+    color: #111827;
+}
+
+.resume-education p {
+    color: #2563eb;
+
+    font-weight: bold;
+}
+
+.resume-education span {
+    font-size: 11px;
+
+    color: #64748b;
+}
+
+
+/* =====================================
+   PROJECT PREVIEW
+===================================== */
+
+.resume-project {
+    margin-bottom: 17px;
+}
+
+.resume-project h4 {
+    color: #111827;
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+.resume-project p {
+    margin-bottom: 4px;
+}
+
+.resume-project strong {
+    color: #1e3a8a;
+
+    font-size: 11px;
+}
+
+
+/* =====================================
+   CERTIFICATIONS
+===================================== */
+
+#previewCertifications {
+    padding-left: 18px;
+}
+
+#previewCertifications li {
+    font-size: 12px;
+
+    margin-bottom: 6px;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    background: #0f172a;
+
+    color: #cbd5e1;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media screen and (max-width: 1100px) {
+
+    .builder-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-container {
+        max-width: 700px;
+
+        margin: auto;
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+
+    .preview-container {
+        padding: 15px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .builder-section {
+        padding: 25px 10px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+}

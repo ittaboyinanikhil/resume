@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Resume Builder</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="logo">
+            Resume<span>Builder</span>
+        </div>
+
+        <nav>
+            <a href="#builder">Builder</a>
+            <a href="#preview">Preview</a>
+        </nav>
+
+    </header>
+ <section class="hero">
+
+        <div>
+
+            <h1>Create Your Professional Resume</h1>
+
+            <p>
+                Enter your information and create a professional resume
+                in minutes.
+            </p>
+
+            <a href="#builder" class="start-btn">
+                Start Building
+            </a>
+
+        </div>
+
+    </section>
+    <section class="builder-section" id="builder">
+
+        <div class="builder-container">
+           <div class="form-container">
+
+                <h2>Resume Information</h2>
+
+                <p class="form-description">
+                    Fill in your details. Your resume will update automatically.
+                </p>
+                <div class="form-section">
+
+                    <h3> Personal Information</h3>
+
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        id="nameInput"
+                        placeholder="Enter your full name"
+                    >
+
+
+                    <label>Professional Title</label>
+
+                    <input
+                        type="text"
+                        id="titleInput"
+                        placeholder="Example: AI/ML Student"
+                    >
+
+
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="emailInput"
+                        placeholder="example@gmail.com"
+                    >
+
+
+                    <label>Phone</label>
+
+                    <input
+                        type="text"
+                        id="phoneInput"
+                        placeholder="+91 9876543210"
+                    >
+
+
+                    <label>Location</label>
+
+                    <input
+                        type="text"
+                        id="locationInput"
+                        placeholder="Hyderabad, India"
+                    >
+
+
+                    <label>LinkedIn</label>
+
+                    <input
+                        type="text"
+                        id="linkedinInput"
+                        placeholder="linkedin.com/in/yourname"
+                    >
+
+
+                    <label>GitHub</label>
+
+                    <input
+                        type="text"
+                        id="githubInput"
+                        placeholder="github.com/yourname"
+                    >
+
+
+                    <label>Profile Photo</label>
+
+                    <input
+                        type="file"
+                        id="photoInput"
+                        accept="image/*"
+                    >
+
+                </div>
+                <div class="form-section">
+
+                    <h3> Career Objective</h3>
+
+                    <textarea
+                        id="objectiveInput"
+                        rows="5"
+                        placeholder="Write your career objective..."
+                    ></textarea>
+
+                </div>
+                <div class="form-section">
+
+                    <div class="section-heading">
+
+                        <h3>🎓 Education</h3>
+
+                        <button
+                            type="button"
+                            class="add-btn"
+                            onclick="addEducation()"
+                        >
+                            + Add
+                        </button>
+
+                    </div>
+
+                    <div id="educationContainer">
+
+                        <div class="education-form">
+
+                            <input
+                                type="text"
+                                class="education-degree"
+                                placeholder="Degree / Course"
+                            >
+
+                            <input
+                                type="text"
+                                class="education-college"
+                                placeholder="College / University"
+                            >
+
+                            <input
+                                type="text"
+                                class="education-year"
+                                placeholder="Year"
+                            >
+
+                            <input
+                                type="text"
+                                class="education-score"
+                                placeholder="CGPA / Percentage"
+                            >
+
+                            <button
+                                type="button"
+                                class="remove-btn"
+                                onclick="removeEducation(this)"
+                            >
+                                Remove
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-section">
+
+                    <h3> Skills</h3>
+
+                    <input
+                        type="text"
+                        id="skillsInput"
+                        placeholder="HTML, CSS, Java, Python, Machine Learning"
+                    >
+
+                    <p class="hint">
+                        Separate each skill using commas.
+                    </p>
+
+                </div>
+                <div class="form-section">
+
+                    <div class="section-heading">
+
+                        <h3> Projects</h3>
+
+                        <button
+                            type="button"
+                            class="add-btn"
+                            onclick="addProject()"
+                        >
+                            + Add
+                        </button>
+
+                    </div>
+
+                    <div id="projectsContainer">
+
+                        <div class="project-form">
+
+                            <input
+                                type="text"
+                                class="project-name"
+                                placeholder="Project Name"
+                            >
+
+                            <input
+                                type="text"
+                                class="project-tech"
+                                placeholder="Technologies Used"
+                            >
+
+                            <textarea
+                                class="project-description"
+                                rows="4"
+                                placeholder="Describe your project..."
+                            ></textarea>
+
+                            <button
+                                type="button"
+                                class="remove-btn"
+                                onclick="removeProject(this)"
+                            >
+                                Remove
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-section">
+
+                    <h3> Certifications</h3>
+
+                    <textarea
+                        id="certificationsInput"
+                        rows="5"
+                        placeholder="Enter one certification per line"
+                    ></textarea>
+
+                </div>
+                <div class="form-section">
+
+                    <h3> Languages</h3>
+
+                    <input
+                        type="text"
+                        id="languagesInput"
+                        placeholder="English, Telugu, Hindi"
+                    >
+
+                </div>
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="generate-btn"
+                        onclick="updateResume()"
+                    >
+                        Update Resume
+                    </button>
+
+                    <button
+                        type="button"
+                        class="print-btn"
+                        onclick="printResume()"
+                    >
+                          Print / PDF
+                    </button>
+
+                    <button
+                        type="button"
+                        class="reset-btn"
+                        onclick="resetResume()"
+                    >
+                        Reset
+                    </button>
+
+                </div>
+
+            </div>
+             <div class="preview-container" id="preview">
+
+                <div class="resume" id="resume">
+
+                    <aside class="resume-sidebar">
+
+                        <div class="profile-area">
+
+                            <div class="profile-photo">
+
+                                <img
+                                    id="previewPhoto"
+                                    src=""
+                                    alt="Profile Photo"
+                                >
+
+                                <span id="photoPlaceholder">
+                                    PHOTO
+                                </span>
+
+                            </div>
+
+                            <h2 id="previewName">
+                                Your Name
+                            </h2>
+
+                            <p id="previewTitle">
+                                Professional Title
+                            </p>
+
+                        </div>
+
+
+                        <!-- CONTACT -->
+
+                        <div class="sidebar-section">
+
+                            <h3>CONTACT</h3>
+
+                            <p id="previewEmail">
+                                  Email
+                            </p>
+
+                            <p id="previewPhone">
+                                  Phone
+                            </p>
+
+                            <p id="previewLocation">
+                                  Location
+                            </p>
+
+                            <p id="previewLinkedin">
+                                  LinkedIn
+                            </p>
+
+                            <p id="previewGithub">
+                                  GitHub
+                            </p>
+
+                        </div>
+
+                        <div class="sidebar-section">
+
+                            <h3>SKILLS</h3>
+
+                            <ul id="previewSkills">
+
+                                <li>Your Skills</li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div class="sidebar-section">
+
+                            <h3>LANGUAGES</h3>
+
+                            <p id="previewLanguages">
+                                English
+                            </p>
+
+                        </div>
+
+                    </aside>
+
+                    <main class="resume-main">
+                        <div class="resume-main-header">
+
+                            <h1 id="previewMainName">
+                                YOUR NAME
+                            </h1>
+
+                            <h2 id="previewMainTitle">
+                                Professional Title
+                            </h2>
+
+                        </div>
+                        <section class="resume-section">
+
+                            <h3>CAREER OBJECTIVE</h3>
+
+                            <p id="previewObjective">
+                                Your career objective will appear here.
+                            </p>
+
+                        </section>
+                        <section class="resume-section">
+
+                            <h3>EDUCATION</h3>
+
+                            <div id="previewEducation">
+
+                                <div class="resume-education">
+
+                                    <h4>
+                                        Your Degree
+                                    </h4>
+
+                                    <p>
+                                        Your College
+                                    </p>
+
+                                    <span>
+                                        Year | Score
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+                        <section class="resume-section">
+
+                            <h3>PROJECTS</h3>
+
+                            <div id="previewProjects">
+
+                                <div class="resume-project">
+
+                                    <h4>
+                                        Your Project
+                                    </h4>
+
+                                    <p>
+                                        Project description
+                                    </p>
+
+                                    <strong>
+                                        Technologies:
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+                        <section class="resume-section">
+
+                            <h3>CERTIFICATIONS</h3>
+
+                            <ul id="previewCertifications">
+
+                                <li>
+                                    Your certification
+                                </li>
+
+                            </ul>
+
+                        </section>
+
+                    </main>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <footer>
+
+        <p>
+             2026 Smart Resume Builder
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
